@@ -25,6 +25,8 @@ export async function fetchMovies(query: string): Promise<Movie[]> {
         page: 1,
       },
     });
+    console.log('API KEY:', import.meta.env.VITE_TMDB_TOKEN);
+    
     return response.data.results;
   } catch (error) {
     if (axios.isAxiosError(error)) {
